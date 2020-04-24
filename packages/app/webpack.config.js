@@ -25,7 +25,8 @@ module.exports = merge.smart(base, {
       // Load federated modules from other remote entrypoints (see public/index.html)
       remotes: {
         header: 'header',
-        footer: 'footer'
+        footer: 'footer',
+        ds: 'ds'
       },
       shared: ['react', 'react-dom']
     }),

@@ -26,9 +26,9 @@ module.exports = merge.smart(base, {
       exposes: {
         Header: './src/expose/Header'
       },
-      // remotes: {
-      //   'design-system': 'design-system'
-      // },
+      remotes: {
+        ds: 'ds'
+      },
       shared: ['react', 'react-dom']
     }),
     new HtmlWebpackPlugin({
