@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx concurrently \"npx webpack --mode=development --watch\" \"npx start-storybook -p 6006 -c .storybook -s ./dist\"",
     "build": " npx webpack --mode=production && npx rimraf ./storybook-content && build-storybook -c .storybook -o ./storybook-content -s ./dist",
-    "clean": "npx rimraf dist"
+    "clean": "npx rimraf dist storybook-content"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.7.0",
