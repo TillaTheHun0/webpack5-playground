@@ -19,9 +19,10 @@ module.exports = merge.smart(base, {
         Button: './src/components/Button',
         ButtonGroup: './src/components/ButtonGroup',
         Box: './src/components/Box',
-        ThemeProvider: './src/components/ThemeProvider'
+        ThemeProvider: './src/components/ThemeProvider',
+        theme: './src/components/theme'
       },
-      shared: ['react', 'react-dom']
+      shared: ['react', 'react-dom', '@chakra-ui/core', '@emotion/core', '@emotion/styled', 'emotion-theming']
     })
   ]
 })

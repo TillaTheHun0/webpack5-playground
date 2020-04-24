@@ -1,4 +1,10 @@
 
+import React from 'react'
+
 import { ThemeProvider } from '@chakra-ui/core'
 
-export default ThemeProvider
+import theme from '../theme'
+
+export default ({ children }) => {
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+}

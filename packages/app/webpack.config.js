@@ -28,7 +28,7 @@ module.exports = merge.smart(base, {
         footer: 'footer',
         ds: 'ds'
       },
-      shared: ['react', 'react-dom']
+      shared: ['react', 'react-dom', '@chakra-ui/core', '@emotion/core', '@emotion/styled', 'emotion-theming']
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html'
