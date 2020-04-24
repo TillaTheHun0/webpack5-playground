@@ -1,0 +1,29 @@
+{
+  "name": "webpack5-playground",
+  "version": "1.0.0",
+  "description": "Webpack 5 Module Federation Playground",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx lerna run dev --parallel",
+    "build": "npx lerna run build --parallel",
+    "clean": "npx lerna run clean --parallel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TillaTheHun0/webpack5-playground.git"
+  },
+  "author": "Tyler Hall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TillaTheHun0/webpack5-playground/issues"
+  },
+  "homepage": "https://github.com/TillaTheHun0/webpack5-playground#readme",
+  "devDependencies": {
+    "lerna": "^3.20.2",
+    "standard": "^14.3.3"
+  },
+  "workspaces": [
+    "packages/**"
+  ]
+}

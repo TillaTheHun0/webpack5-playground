@@ -1,0 +1,26 @@
+{
+  "name": "@webpack5-playground/app",
+  "version": "1.0.0",
+  "description": "An Awesome App Built by the App Team",
+  "scripts": {
+    "dev": "npx webpack-dev-server --watch --mode development",
+    "build": "npx webpack --mode production",
+    "clean": "npx rimraf dist"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+
+    "babel-loader": "^8.1.0",
+    "html-webpack-plugin": "^4.2.0",
+    "rimraf": "^3.0.2",
+    "webpack": "git://github.com/webpack/webpack.git#dev-1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  }
+}
