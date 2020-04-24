@@ -101,3 +101,5 @@ dist
 .DS_Store
 
 .vscode/
+
+storybook-content
