@@ -2,7 +2,9 @@
 import React from 'react'
 
 import { addDecorator, configure } from '@storybook/react'
-import { CSSReset, ThemeProvider } from '@chakra-ui/core'
+import { CSSReset } from '@chakra-ui/core'
+
+import ThemeProvider from '../src/components/ThemeProvider'
 
 const req = require.context('../src', true, /stories.(jsx|mdx)$/)
 

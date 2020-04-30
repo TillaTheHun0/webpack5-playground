@@ -35,18 +35,18 @@ stories.add('variants', () => (
   </ButtonGroup>
 ))
 
-stories.add('sizes', () => (
+stories.add('primary w/ sizes', () => (
   <ButtonGroup>
-    <Button variantColor='blue' size='xs'>
+    <Button variantColor='primary' size='xs'>
       Button
     </Button>
-    <Button variantColor='blue' size='sm'>
+    <Button variantColor='primary' size='sm'>
       Button
     </Button>
-    <Button variantColor='blue' size='md'>
+    <Button variantColor='primary' size='md'>
       Button
     </Button>
-    <Button variantColor='blue' size='lg'>
+    <Button variantColor='primary' size='lg'>
       Button
     </Button>
   </ButtonGroup>
