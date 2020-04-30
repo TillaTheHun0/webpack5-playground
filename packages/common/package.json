@@ -1,0 +1,6 @@
+{
+  "name": "@webpack5-playground/common",
+  "version": "1.0.0",
+  "description": "Common",
+  "main": "index.js"
+}
