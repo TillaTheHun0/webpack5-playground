@@ -1,5 +1,5 @@
 
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const { StorybookWebpackFederationPlugin } = require('storybook-webpack-federation-plugin')
 const merge = require('webpack-merge')
 
 const { webpackConfig } = require('@webpack5-playground/common')
@@ -11,17 +11,11 @@ module.exports = webpackConfig(base =>
       publicPath: 'http://localhost:6006/'
     },
     plugins: [
-      new ModuleFederationPlugin({
+      new StorybookWebpackFederationPlugin({
         name: 'ds',
-        library: { type: 'var', name: 'ds' },
-        filename: 'remoteEntry.js',
-        // Exposes components as consumable modules. Effectively, microfrontends
-        exposes: {
-          Button: './src/components/Button',
-          ButtonGroup: './src/components/ButtonGroup',
-          Box: './src/components/Box',
-          ThemeProvider: './src/components/ThemeProvider',
-          theme: './src/components/theme'
+        files: {
+          paths: ['./src/components/**/*.{js,jsx}'],
+          removePrefix: './src/components/'
         },
         shared: ['react', 'react-dom', '@chakra-ui/core', '@emotion/core', '@emotion/styled', 'emotion-theming']
       })
