@@ -20,6 +20,25 @@ Storybook Server:
 
 The Main App pulls dependencies from the Header, Footer, and Design System servers, at runtime, and "stitches" them together to form a full application. It's magic 🌟
 
+### Prove that it works
+
+Navigate to `http://localhost:3000` to see the awesome app ;)!
+
+Now let's say the Design System team wants to make a change. They want to remove that ugly border on the `Box` component in the design system. Let's go ahead and do that:
+
+`packages/design-system/src/components/Box/index.jsx`
+```javascript
+const StyledBox = styled(Box)`
+  border: 2px solid black; <-- Remove this line
+`
+```
+
+Go ahead and save and let Storybook rebuild your component. Now refresh the page on `http://localhost:3000`. Notice that the border on our header and footer is gone! Again, our app does not have a dependency on our Design System at build time (check its `package.json` if you don't believe me), but at _run time_. The components are fetched by Webpack at runtime using Module Federation and made available to our app. **Your Storybook is now a component host for your design system, the one source of truth for documentation and distribution.**
+
+### So what?
+
+This means any updates to your design system happen the instant your design system changes, across all of your apps. No more bumping dependencies and creating new artifacts to get those design system changes live.
+
 ## Why
 
 Typically, frontends are monolithic, having a manifest of dependencies, usually a `package.json`, and is deployed altogether as a single artifact. Any components that the application depends on is ususally included as a _versioned_ dependency in the `package.json` and then imported throughout the project. This works great for small applications.
