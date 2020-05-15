@@ -2,7 +2,7 @@
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const { StorybookWebpackFederationPlugin } = require('storybook-webpack-federation-plugin')
 const merge = require('webpack-merge')
 
 const { webpackConfig } = require('@webpack5-playground/common')
@@ -19,19 +19,16 @@ module.exports = webpackConfig(base =>
       publicPath: 'http://localhost:3002/'
     },
     plugins: [
-      new ModuleFederationPlugin({
-        name: 'footer',
-        library: { type: 'var', name: 'footer' },
-        filename: 'remoteEntry.js',
-        // Exposes the Header as consumable module. Effectively, a microfrontend
-        exposes: {
-          Footer: './src/expose/Footer'
-        },
-        remotes: {
-          ds: 'ds'
-        },
-        shared: ['react', 'react-dom']
-      }),
+      new StorybookWebpackFederationPlugin({
+          name: 'footer',
+          remotes: ["ds"],
+          // Exposes the Footer as consumable module. Effectively, a microfrontend
+          files: {
+            paths: ['./src/expose/Footer.jsx'],
+            removePrefix: './src/expose/'
+          },
+        }
+      ),
       new HtmlWebpackPlugin({
         template: './public/index.html',
         chunks: ['main']
