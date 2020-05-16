@@ -20,15 +20,14 @@ module.exports = webpackConfig(base =>
     },
     plugins: [
       new StorybookWebpackFederationPlugin({
-          name: 'footer',
-          remotes: ["ds"],
-          // Exposes the Footer as consumable module. Effectively, a microfrontend
-          files: {
-            paths: ['./src/expose/Footer.jsx'],
-            removePrefix: './src/expose/'
-          },
+        name: 'footer',
+        remotes: ['ds'],
+        // Exposes the Footer as consumable module. Effectively, a microfrontend
+        files: {
+          paths: ['./src/expose/Footer.jsx'],
+          removePrefix: './src/expose/'
         }
-      ),
+      }),
       new HtmlWebpackPlugin({
         template: './public/index.html',
         chunks: ['main']

@@ -21,11 +21,9 @@ module.exports = webpackConfig(base =>
     plugins: [
       new StorybookWebpackFederationPlugin({
         // Load federated modules from other remote entrypoints (see public/index.html)
-        remotes: ["ds", "header", "footer"],
+        remotes: ['ds', 'header', 'footer'],
         shared: ['react', 'react-dom', '@chakra-ui/core', '@emotion/core', '@emotion/styled', 'emotion-theming']
-
-        }
-      ),
+      }),
       new HtmlWebpackPlugin({
         template: './public/index.html'
       })
