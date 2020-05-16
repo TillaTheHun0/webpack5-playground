@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "npx lerna run dev --parallel",
     "build": "npx lerna run build --parallel",
-    "clean": "npx lerna run clean --parallel"
+    "clean": "npx lerna run clean --parallel",
+    "lint": "npx standard"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,11 @@
   },
   "homepage": "https://github.com/TillaTheHun0/webpack5-playground#readme",
   "devDependencies": {
-    "lerna": "^3.20.2",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "husky": "^4.2.5",
+    "lerna": "^3.21.0",
+    "lint-staged": "^10.2.2",
     "standard": "^14.3.3"
   },
   "workspaces": [
